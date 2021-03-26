@@ -18,7 +18,7 @@ li a:hover{
 
 }
 
-li a.current{
+li.current a{
     text-decoration: underline;
     color: #ffffff;
     background:#000000;
