@@ -15,9 +15,14 @@ li a{
 li a:hover{
 
     font-weight: bold;
-    text-decoration: underline;
 
 }
+
+li a.current{
+    text-decoration: underline;
+    color: #ffffff;
+    background:#000000;
+ }
 
 .homegallery{
     display: grid;
