@@ -32,7 +32,9 @@
 }
 
 .family-member-name {
-    font-style: bold italic;
+    text-align: center;
+    font-weight: bold;
+    font-size: 100px;
 }
 .family-member-photos > p {
     font-size: 1fr;
