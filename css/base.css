@@ -98,6 +98,8 @@ nav li a.active {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    display: block;
+    justify-content: center;
 }
 
 
@@ -111,7 +113,10 @@ nav li a.active {
 }
 
 
-
+.gallery-photo > img {
+    max-width: 300px;
+    max-height: 600px;
+}
 
 /* Index page */
 
@@ -122,6 +127,55 @@ nav li a.active {
     flex-direction: row;
     flex-wrap: wrap;
 } */
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 500px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner,
+.flip-card:focus-within .flip-card-inner,
+.flip-card:active .flip-card-inner,
+.flip-card:focus .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: #8C2F39;
+    color: white;
+    transform: rotateY(180deg);
+    font-size: 75px;
+  }
 
 .homegallery {
     display: grid;
@@ -140,7 +194,7 @@ nav li a.active {
 
 }
 
-.gallerytext {
+.family-member-photo {
     border: 10px #FCB9B2 solid;
     margin: 10px;
     clip-path: circle(75%);
@@ -157,7 +211,7 @@ nav li a.active {
     margin: 10px;
 }
 
-.gallerytext:hover {
+.family-member-photo:hover {
     border-radius: 10px 100px / 120px;
     clip-path: circle(50%);
 
@@ -177,7 +231,7 @@ nav li a.active {
 
 /* Hobby page */
 
-.hobbygallery{
+.hobbygallery, .travelgallery{
     display: grid;
     display: grid;
     grid-template-columns: repeat(1, 2fr);
@@ -218,9 +272,12 @@ form {
 /* Footer */
 
 
+@media screen and (prefers-reduced-motion: reduce){
+    .family-member-photo {
+        animation: none;
+    }
 
-
-
+}
 
 .footer {
     display: flex;
@@ -271,7 +328,7 @@ ul{
         padding-left: 5%;
     }
 
-    .hobbygallery {
+    .hobbygallery, .travelgallery {
         grid-template-columns: repeat(2, 2fr);
         grid-template-rows: 600px 600px 600px;
     }
@@ -285,7 +342,7 @@ ul{
         flex-grow: 2;
     }
 
-    .hobbygallery {
+    .hobbygallery, .travelgallery {
         grid-template-columns: repeat(3, 2fr);
         grid-template-rows: 600px 600px;
     }
