@@ -17,6 +17,7 @@ header {
     right: 0;
 }
 
+
 .skip{
     position: absolute;
     transform: translateY(-100%);
@@ -299,10 +300,6 @@ form {
     margin: 10;
 }
 
-
-/* Footer */
-
-
 @media screen and (prefers-reduced-motion: reduce){
     .family-member-photo {
         transition: none;
@@ -317,7 +314,6 @@ form {
         transition: none;
         animation: none;
     }
-
 
 }
 
