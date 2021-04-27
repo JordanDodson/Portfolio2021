@@ -146,6 +146,9 @@ nav li a.active {
     display: flex;
     
 }
+
+/* From w3 schools  */
+
 .flip-card {
     background-color: transparent;
     width: 300px;
@@ -193,6 +196,7 @@ nav li a.active {
     color: white;
     transform: rotateY(180deg);
     font-size: 75px;
+    word-wrap: break-word;
   }
 
 .homegallery {
@@ -301,8 +305,19 @@ form {
 
 @media screen and (prefers-reduced-motion: reduce){
     .family-member-photo {
+        transition: none;
+    }
+
+    .flip-card-inner{
+        transition: none;
         animation: none;
     }
+
+    .family-member-photo {
+        transition: none;
+        animation: none;
+    }
+
 
 }
 
